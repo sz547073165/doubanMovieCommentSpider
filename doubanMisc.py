@@ -56,7 +56,10 @@ def commentsHandler(comments):
         status='F'
         #print('status='+status)
         #print('star='+star)
-        time=commentInfoSpanList[1]['title']
+        if len(commentInfoSpanList) == 1:
+            time=commentInfoSpanList[0]['title']
+        else:
+            time=commentInfoSpanList[1]['title']
         #print('time='+time)
     comment=soup.find_all('p')[0].text.replace("'","\\\'")
     #print('comment='+comment)
